@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+</head>
+<body>
+	<div>
+		<form name="Calculator">
+			<div>
+				<input type="text" id="result" name="Input">
+			</div>
+
+			<div>
+				<input type="button" value="1" onclick="dis('1')" onkeydown="event_wala(event)">
+				<input type="button" value="2" onclick="dis('2')" onkeydown="myFunction(event)">
+				<input type="button" value="3" onclick="dis('3')" onkeydown="myFunction(event)">
+				<input type="button" value="+" onclick="dis('+')" onkeydown="myFunction(event)">
+			</div>
+
+			<div>
+				<input type="button" value="4" onclick="dis('4')" onkeydown="event_wala(event)">
+				<input type="button" value="5" onclick="dis('5')" onkeydown="myFunction(event)">
+				<input type="button" value="6" onclick="dis('6')" onkeydown="myFunction(event)">
+				<input type="button" value="-" onclick="dis('-')" onkeydown="myFunction(event)">
+			</div>
+
+			<div>
+				<input type="button" value="7" onclick="dis('7')" onkeydown="event_wala(event)">
+				<input type="button" value="8" onclick="dis('8')" onkeydown="myFunction(event)">
+				<input type="button" value="9" onclick="dis('9')" onkeydown="myFunction(event)">
+				<input type="button" value="*" onclick="dis('*')" onkeydown="myFunction(event)">
+			</div>
+
+			<div>
+				<input type="button" value="0" onclick="dis('0')" onkeydown="event_wala(event)">
+				<input type="button" value="/" onclick="dis('/')" onkeydown="myFunction(event)">
+				<input type="button" value="%" onclick="dis('%')" onkeydown="myFunction(event)">
+				<input type="button" value="C" onclick="clr()" onkeydown="myFunction(event)">
+				<input type="button" value="=" onclick="solve()" >
+			</div>
+		</form>
+	</div>
+
+
+
+
+	<script>
+		function dis(val) //this function is used to display values
+		{
+			document.getElementById("result").value += val;
+			//In every input tag we can also write like this - Calculator.Input.value += '9'
+		}
+
+		function clr() //this function is used to clear the input type
+		{
+			document.getElementById("result").value = "";
+		}
+		function solve()
+		{
+			var x = document.getElementById("result").value;
+			//alert(cal); // Just for testing
+			var y = eval(x);
+			//alert(x); // Just for testing
+			document.getElementById('result').value = y;
+		}
+	</script>
+</body>
+</html>
